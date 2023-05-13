@@ -34,9 +34,9 @@ namespace LavoroNET
 			//
 		}
 		
-		public const string FilesPath = @"C:\Users\mspma\Documents\GitHub\Lavoro\LavoroCore\public_html\files.js";
+		public string FilesPath = @"files.js";
 		
-		public const string BrowserPath = @"C:\Users\mspma\Documents\GitHub\Lavoro\LavoroCore\public_html\browser.html";
+		public string BrowserPath = @"browser.html";
 		
 		public void UpdateFiles(String s) {
 			File.WriteAllText(FilesPath, "var files = [" + s + "];", Encoding.UTF8);
@@ -70,6 +70,10 @@ namespace LavoroNET
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
+			this.FilesPath = System.Environment.CurrentDirectory + @"\" + this.FilesPath;
+			
+			this.BrowserPath = System.Environment.CurrentDirectory + @"\" + this.BrowserPath;
+			
 			this.webBrowserFile.ScriptErrorsSuppressed = true;
 			
 			this.webBrowserPreview.ScriptErrorsSuppressed = true;

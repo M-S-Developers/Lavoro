@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>File Browser</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <script src="files.js"></script>
+        
+        <script>
+            function addFile(file) {
+                files.push(file);
+            }
+            
+            function updateFilesNET() {
+                var r = "";
+    
+                for (var e in files) {
+                    if (r.length > 0) {
+                        r += ",";
+                    }
+
+                    r += "{ url: '" + files[e].url + "', cookie: '" + files[e].cookie + "'}";
+                }
+        
+                window.external.UpdateFiles(r);
+            }
+
+            function previewFileNET(vurl, vcookie) {
+                window.external.PreviewFile(vurl, vcookie);
+            }
+
+            function addFileNET(vurl, vcookie) {    
+                addFile({ url: vurl, cookie: vcookie});
+            }
+            
+            var index = -1;
+            
+            function removeIndex(e, i, a) {
+                return i != index;
+            }
+            
+            function removeFile(i) {
+                index = i;
+                
+                files = files.filter(removeIndex);
+                
+                updateFilesNET();
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="newFile" style="width: 82%">
+        
+        <input type="button" style="width: 16%" value="Add file" onclick="addFile({ url: document.getElementById('newFile').value, cookie: ''}); window.external.AddFileFromInput();">
+        
+        <hr>
+        
+        <table>
+            <tr><td>Universal Resource Locator (URL)</td><td>Action</td></tr>
+            
+            <script>
+                var ind = 0;
+                
+                for (var t in files) {
+                    document.write('<tr>');
+                    document.write("<td><a href=\"javascript:previewFileNET('" + files[t].url + "', '" + files[t].cookie + "');\">" + files[t].url + "</a></td>");
+                    document.write("<td><a href=\"javascript:removeFile('" + ind + "');\">Delete</a></td>");
+                    document.write('</tr>');
+                    document.write('\n');
+                    
+                    ++ind;
+                }
+            </script>
+        </table>
+    </body>
+</html>
