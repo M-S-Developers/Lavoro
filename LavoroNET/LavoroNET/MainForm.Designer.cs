@@ -47,6 +47,7 @@ namespace LavoroNET
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tabControlMain = new System.Windows.Forms.TabControl();
 			this.tabPageFileBrowser = new System.Windows.Forms.TabPage();
 			this.webBrowserFile = new System.Windows.Forms.WebBrowser();
@@ -176,6 +177,7 @@ namespace LavoroNET
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(762, 426);
 			this.Controls.Add(this.tabControlMain);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
 			this.Text = "LavoroNET";
 			this.Load += new System.EventHandler(this.MainFormLoad);
