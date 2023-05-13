@@ -1,0 +1,8 @@
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\bin\Debug\LavoroNET.exe.config
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\bin\Debug\LavoroNET.exe
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\bin\Debug\LavoroNET.pdb
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\obj\Debug\LavoroNET.csprojResolveAssemblyReference.cache
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\obj\Debug\LavoroNET.MainForm.resources
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\obj\Debug\LavoroNET.csproj.GenerateResource.Cache
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\obj\Debug\LavoroNET.exe
+C:\Users\mspma\Documents\GitHub\Lavoro\LavoroNET\LavoroNET\obj\Debug\LavoroNET.pdb
